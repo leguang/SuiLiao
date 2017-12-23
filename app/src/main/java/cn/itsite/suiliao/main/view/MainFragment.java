@@ -7,9 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.orhanobut.logger.Logger;
+
 import cn.itsite.abase.mvp.view.base.BaseFragment;
-import cn.itsite.suiliao.main.chat.ChatListFragment;
 import cn.itsite.suiliao.R;
+import cn.itsite.suiliao.main.chat.ChatListFragment;
+import cn.itsite.suiliao.main.mine.view.MineFragment;
+import cn.itsite.suiliao.main.play.view.PlayFragment;
 import me.yokeyword.fragmentation.SupportFragment;
 
 /**
@@ -21,6 +25,7 @@ import me.yokeyword.fragmentation.SupportFragment;
 public class MainFragment extends BaseFragment {
     private static final String TAG = MainFragment.class.getSimpleName();
     private SupportFragment[] mFragments = new SupportFragment[3];
+    private int prePosition = 0;
 
     public static MainFragment newInstance(Bundle bundle) {
         MainFragment fragment = new MainFragment();
@@ -40,8 +45,8 @@ public class MainFragment extends BaseFragment {
         SupportFragment firstFragment = findFragment(ChatListFragment.class);
         if (firstFragment == null) {
             mFragments[0] = ChatListFragment.newInstance();
-            mFragments[1] = ChatListFragment.newInstance();
-            mFragments[2] = ChatListFragment.newInstance();
+            mFragments[1] = PlayFragment.newInstance();
+            mFragments[2] = MineFragment.newInstance();
 
             loadMultipleRootFragment(R.id.fl_container, 0,
                     mFragments[0],
@@ -51,8 +56,8 @@ public class MainFragment extends BaseFragment {
             // 这里库已经做了Fragment恢复,所有不需要额外的处理了, 不会出现重叠问题
             // 这里我们需要拿到mFragments的引用
             mFragments[0] = firstFragment;
-            mFragments[1] = findFragment(ChatListFragment.class);
-            mFragments[2] = findFragment(ChatListFragment.class);
+            mFragments[1] = findFragment(PlayFragment.class);
+            mFragments[2] = findFragment(MineFragment.class);
         }
 
         initView(view);
@@ -61,17 +66,10 @@ public class MainFragment extends BaseFragment {
     private void initView(View view) {
         BottomNavigationView navigation = view.findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.navigation_chat:
-                    return true;
-                case R.id.navigation_play:
-                    return true;
-                case R.id.navigation_mine:
-                    return true;
-                default:
-                    break;
-            }
-            return false;
+            Logger.e("item-->" + item.toString() + "getOrder-->" + item.getOrder() + "---id-->" + item.getItemId());
+            showHideFragment(mFragments[item.getOrder()], mFragments[prePosition]);
+            prePosition = item.getOrder();
+            return true;
         });
     }
 }

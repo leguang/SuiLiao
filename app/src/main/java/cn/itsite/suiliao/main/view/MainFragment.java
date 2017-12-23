@@ -1,4 +1,4 @@
-package cn.itsite.suiliao;
+package cn.itsite.suiliao.main.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import cn.itsite.abase.mvp.view.base.BaseFragment;
+import cn.itsite.suiliao.main.chat.ChatListFragment;
+import cn.itsite.suiliao.R;
 import me.yokeyword.fragmentation.SupportFragment;
 
 /**

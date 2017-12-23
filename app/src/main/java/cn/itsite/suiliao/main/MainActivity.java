@@ -1,8 +1,10 @@
-package cn.itsite.suiliao;
+package cn.itsite.suiliao.main;
 
 import android.os.Bundle;
 
 import cn.itsite.abase.mvp.view.base.BaseActivity;
+import cn.itsite.suiliao.R;
+import cn.itsite.suiliao.main.view.MainFragment;
 
 /**
  * @author leguang

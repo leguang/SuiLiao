@@ -1,4 +1,4 @@
-package cn.itsite.suiliao;
+package cn.itsite.suiliao.main.chat;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import cn.itsite.abase.mvp.view.base.BaseFragment;
+import cn.itsite.suiliao.R;
 
 /**
  * @author leguang

@@ -37,6 +37,5 @@ dependencies {
     releaseCompile project(path: ':apush', configuration: 'release')
     //黄油刀系列
     compile 'com.jakewharton:butterknife:8.4.0'
-    compile 'com.android.support:support-v4:26.+'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
 }

@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import cn.itsite.abase.mvp.view.base.BaseActivity;
 import cn.itsite.suiliao.R;
-import cn.itsite.suiliao.common.Constants;
 import cn.itsite.suiliao.launch.view.SplashFragment;
 
 

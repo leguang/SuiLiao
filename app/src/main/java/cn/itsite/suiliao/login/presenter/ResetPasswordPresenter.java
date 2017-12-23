@@ -3,8 +3,8 @@ package cn.itsite.suiliao.login.presenter;
 import android.support.annotation.NonNull;
 
 import cn.itsite.abase.mvp.presenter.base.BasePresenter;
-import cn.itsite.dreamnote.login.contract.ResetPasswordContract;
-import cn.itsite.dreamnote.login.model.ResetPasswordModel;
+import cn.itsite.suiliao.login.contract.ResetPasswordContract;
+import cn.itsite.suiliao.login.model.ResetPasswordModel;
 
 
 /**

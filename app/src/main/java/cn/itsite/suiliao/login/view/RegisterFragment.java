@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 
 import cn.itsite.abase.common.DialogHelper;
 import cn.itsite.abase.mvp.view.base.BaseFragment;
-import cn.itsite.dreamnote.login.contract.RegisterContract;
-import cn.itsite.dreamnote.login.presenter.RegisterPresenter;
+import cn.itsite.suiliao.login.contract.RegisterContract;
+import cn.itsite.suiliao.login.presenter.RegisterPresenter;
 
 
 /**

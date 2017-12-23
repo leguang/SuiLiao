@@ -3,14 +3,15 @@ package cn.itsite.suiliao.login;
 import android.Manifest;
 import android.os.Bundle;
 
+import com.taobao.accs.utl.ALog;
+
 import java.util.List;
 
-import cn.itsite.abase.log.ALog;
 import cn.itsite.abase.mvp.view.base.BaseActivity;
 import cn.itsite.abase.utils.ToastUtils;
-import cn.itsite.dreamnote.App;
-import cn.itsite.dreamnote.R;
-import cn.itsite.dreamnote.login.view.LoginFragment;
+import cn.itsite.suiliao.App;
+import cn.itsite.suiliao.R;
+import cn.itsite.suiliao.login.view.LoginFragment;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -27,8 +28,8 @@ public class LoginActivity extends BaseActivity implements EasyPermissions.Permi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (savedInstanceState == null) {
-            loadRootFragment(R.id.fl_main_activity, LoginFragment.newInstance());
+        if (findFragment(LoginFragment.class) == null) {
+            loadRootFragment(R.id.fl_container, LoginFragment.newInstance());
         }
     }
 
@@ -39,11 +40,7 @@ public class LoginActivity extends BaseActivity implements EasyPermissions.Permi
             //有权限就直接进行定位操作
 //            ToastUtils.showToast(App.mContext, "正在定位……");
 //            initLocate();最好还是不需要定位，只记录手动选择的城市和小区。定位只是辅助筛选。
-
-            ALog.e(TAG, "111111");
-
         } else {
-            ALog.e(TAG, "22222");
             EasyPermissions.requestPermissions(this, "应用需要接收短信验证", SMS, perms);
             ToastUtils.showToast(App.mContext, "申请权限……");
 
@@ -53,8 +50,6 @@ public class LoginActivity extends BaseActivity implements EasyPermissions.Permi
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        ALog.e(TAG, "333333");
-
         // Forward results to EasyPermissions
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
     }
@@ -63,7 +58,6 @@ public class LoginActivity extends BaseActivity implements EasyPermissions.Permi
     public void onPermissionsGranted(int requestCode, List<String> list) {
         // Some permissions have been granted
         // ...
-        ALog.e(TAG, "44444");
 
     }
 
@@ -71,7 +65,6 @@ public class LoginActivity extends BaseActivity implements EasyPermissions.Permi
     public void onPermissionsDenied(int requestCode, List<String> list) {
         // Some permissions have been denied
         // ...
-        ALog.e(TAG, "55555555");
 
     }
 }

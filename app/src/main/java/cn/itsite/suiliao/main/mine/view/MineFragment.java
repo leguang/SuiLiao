@@ -1,4 +1,4 @@
-package cn.itsite.suiliao.main.mine;
+package cn.itsite.suiliao.main.mine.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

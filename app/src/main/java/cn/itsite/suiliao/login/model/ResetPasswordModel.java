@@ -1,7 +1,7 @@
 package cn.itsite.suiliao.login.model;
 
 import cn.itsite.abase.mvp.model.base.BaseModel;
-import cn.itsite.dreamnote.login.contract.ResetPasswordContract;
+import cn.itsite.suiliao.login.contract.ResetPasswordContract;
 
 /**
  * Author：leguang on 2017/4/12 0009 14:23

@@ -2,7 +2,7 @@ package cn.itsite.suiliao.login.presenter;
 
 
 import cn.itsite.abase.mvp.presenter.base.BasePresenter;
-import cn.itsite.dreamnote.login.contract.RegisterContract;
+import cn.itsite.suiliao.login.contract.RegisterContract;
 
 /**
  * Author：leguang on 2017/4/12 0009 14:23

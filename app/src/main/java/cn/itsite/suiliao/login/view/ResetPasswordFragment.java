@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import cn.itsite.abase.mvp.view.base.BaseFragment;
-import cn.itsite.dreamnote.login.contract.ResetPasswordContract;
-import cn.itsite.dreamnote.login.presenter.ResetPasswordPresenter;
+import cn.itsite.suiliao.login.contract.ResetPasswordContract;
+import cn.itsite.suiliao.login.presenter.ResetPasswordPresenter;
 
 
 /**

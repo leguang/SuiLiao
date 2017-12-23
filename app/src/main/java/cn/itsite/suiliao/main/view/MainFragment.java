@@ -26,6 +26,7 @@ public class MainFragment extends BaseFragment {
     private static final String TAG = MainFragment.class.getSimpleName();
     private SupportFragment[] mFragments = new SupportFragment[3];
     private int prePosition = 0;
+    private BottomNavigationView navigation;
 
     public static MainFragment newInstance(Bundle bundle) {
         MainFragment fragment = new MainFragment();
@@ -64,12 +65,16 @@ public class MainFragment extends BaseFragment {
     }
 
     private void initView(View view) {
-        BottomNavigationView navigation = view.findViewById(R.id.navigation);
+        navigation = view.findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(item -> {
-            Logger.e("item-->" + item.toString() + "getOrder-->" + item.getOrder() + "---id-->" + item.getItemId());
             showHideFragment(mFragments[item.getOrder()], mFragments[prePosition]);
             prePosition = item.getOrder();
             return true;
+        });
+
+        navigation.setOnNavigationItemReselectedListener(item -> {
+            Logger.e("再一次点击的-->" + item.getOrder());
+
         });
     }
 }

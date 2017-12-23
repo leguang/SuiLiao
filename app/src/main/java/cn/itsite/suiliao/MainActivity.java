@@ -1,36 +1,24 @@
 package cn.itsite.suiliao;
 
 import android.os.Bundle;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
-    private TextView mTextMessage;
+import cn.itsite.abase.mvp.view.base.BaseActivity;
+
+/**
+ * @author leguang
+ * @version v0.0.0
+ * @E-mail langmanleguang@qq.com
+ * @time 2017/12/23 0023 18:22
+ */
+public class MainActivity extends BaseActivity {
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_chat);
-                    return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_play);
-                    return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_mine);
-                    return true;
-                default:
-                    break;
-            }
-            return false;
-        });
+        if (findFragment(MainFragment.class) == null) {
+            loadRootFragment(R.id.fl_container, new MainFragment());
+        }
     }
-
 }

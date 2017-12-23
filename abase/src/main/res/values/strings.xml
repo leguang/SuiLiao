@@ -1,7 +1,3 @@
 <resources>
     <string name="app_name">Abase</string>
-
-    <!--Selecor模块-->
-    <string name="desc_check_mark">check mark</string>
-
 </resources>

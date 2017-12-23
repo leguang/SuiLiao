@@ -18,8 +18,6 @@ public class AudioPlayer {
     private static int streamID;
     public static final int REFRESH = 1;
     public static final int CLICK = 2;
-    public static final int KNOCK = 3;
-    public static final int OPEN = 4;
 
     private AudioPlayer() {
     }
@@ -30,8 +28,6 @@ public class AudioPlayer {
             // 初始化声音
             mSoundPool.load(context, R.raw.refresh, 1);// 1
             mSoundPool.load(context, R.raw.click, 1);// 1
-            mSoundPool.load(context, R.raw.knock, 1);// 1
-            mSoundPool.load(context, R.raw.open, 1);// 1
         }
     }
 

@@ -7,10 +7,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import cn.itsite.abase.common.DialogHelper;
-
-import cn.itsite.abase.mvp.contract.base.BaseContract;
-import cn.itsite.abase.utils.ScreenUtils;
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException;
 import com.orhanobut.logger.Logger;
 
@@ -19,13 +15,15 @@ import org.json.JSONException;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 
+import cn.itsite.abase.common.DialogHelper;
+import cn.itsite.abase.mvp.contract.base.BaseContract;
+import cn.itsite.abase.utils.ScreenUtils;
 import cn.itsite.adialog.dialog.LoadingDialog;
 import me.yokeyword.fragmentation.anim.DefaultNoAnimator;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
 import me.yokeyword.fragmentation_swipeback.SwipeBackFragment;
 
 import static com.orhanobut.logger.Logger.e;
-import static com.orhanobut.logger.Logger.log;
 
 /**
  * Author：leguang on 2016/10/9 0009 15:49
@@ -66,10 +64,11 @@ public abstract class BaseFragment<P extends BaseContract.Presenter> extends Swi
             mPresenter.clear();
             mPresenter = null;
         }
+        hideSoftInput();
         super.onDestroy();
     }
 
-    public void initStateBar(View view) {
+    public void initStateBar(@NonNull View view) {
 //        if (view == null) {
 //            return;
 //        }

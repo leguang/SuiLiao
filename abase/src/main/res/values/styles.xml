@@ -15,7 +15,7 @@
 
     <!--启动页（包括闪屏+Guide）主题-->
     <style name="LaunchTheme" parent="AppTheme">
-        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowBackground">@color/base_color</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowAnimationStyle">@style/NoAnimationTheme</item>
     </style>

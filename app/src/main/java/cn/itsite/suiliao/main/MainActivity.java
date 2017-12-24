@@ -23,4 +23,9 @@ public class MainActivity extends BaseActivity {
             loadRootFragment(R.id.fl_container, new MainFragment());
         }
     }
+
+    @Override
+    public boolean swipeBackPriority() {
+        return false;
+    }
 }

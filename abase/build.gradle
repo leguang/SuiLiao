@@ -38,14 +38,14 @@ dependencies {
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
-    //todo ----------------以下为自己维护的库，所以版本只需要使用+ -------------------
+    // todo ----------------以下为自己维护的库，所以版本只需要使用+ -------------------
     //一个扩展性很好的Dialog+DialogFragment工具。
     compile 'com.github.leguang:ADialog:+'
     //新手引导工具，有带遮罩的和Popwindow两种。
     compile 'com.github.leguang:AGuider:+'
     //页面状态管理
     compile 'com.github.leguang:StateManager:+'
-    //todo ----------------以上为自己维护的库，所以版本只需要使用+ -------------------
+    // todo ----------------以上为自己维护的库，所以版本只需要使用+ -------------------
 
     //RxJava2系列
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'

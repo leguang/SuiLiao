@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import cn.itsite.abase.mvp.view.base.BaseFragment;
-import cn.itsite.suiliao.R;
+import cn.itsite.amine.R;
 
 /**
  * Created by leguang on 2017/9/15 0015.

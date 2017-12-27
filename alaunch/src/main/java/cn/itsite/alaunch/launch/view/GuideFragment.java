@@ -93,18 +93,15 @@ public class GuideFragment extends BaseFragment {
     }
 
     private void initListener() {
-        btGuide.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SPCache.put(_mActivity, IS_FIRST_ENTRY, false);
+        btGuide.setOnClickListener(view -> {
+            SPCache.put(_mActivity, IS_FIRST_ENTRY, false);
 
-                // TODO: 2017/12/27 0027 改成隐士启动，用ARouter
+            // TODO: 2017/12/27 0027 改成隐士启动，用ARouter
 //        startActivity(new Intent(_mActivity, MainActivity.class));
 
-                _mActivity.overridePendingTransition(0, 0);
-                //此处之所以延迟退出是因为立即退出在小米手机上会有一个退出跳转动画，而我不想要这个垂直退出的跳转动画。
+            _mActivity.overridePendingTransition(0, 0);
+            //此处之所以延迟退出是因为立即退出在小米手机上会有一个退出跳转动画，而我不想要这个垂直退出的跳转动画。
 //            getView().postDelayed(() -> _mActivity.finish(), 1000);
-            }
         });
 
         vpGuide.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -132,12 +129,7 @@ public class GuideFragment extends BaseFragment {
         CircleNavigator circleNavigator = new CircleNavigator(_mActivity);
         circleNavigator.setCircleCount(images.length);
         circleNavigator.setCircleColor(ContextCompat.getColor(_mActivity, R.color.base_color));
-        circleNavigator.setCircleClickListener(new CircleNavigator.OnCircleClickListener() {
-            @Override
-            public void onClick(int index) {
-                vpGuide.setCurrentItem(index);
-            }
-        });
+        circleNavigator.setCircleClickListener(index -> vpGuide.setCurrentItem(index));
         indicator.setNavigator(circleNavigator);
         ViewPagerHelper.bind(indicator, vpGuide);
     }

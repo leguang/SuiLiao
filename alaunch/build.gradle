@@ -19,11 +19,14 @@ android {
     }
     publishNonDefault true  //用于解决依赖Module无法区分debug个版本的。
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
     //基础依赖Module
-    debugCompile project(path: ':abase', configuration: 'debug')
-    releaseCompile project(path: ':abase', configuration: 'release')
+    api project(':abase')
 }

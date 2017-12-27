@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'android-apt'
-apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion 26
@@ -34,18 +33,13 @@ android {
 
 dependencies {
     //集合推送，包含阿里云、小米、华为推送。
-    debugCompile project(path: ':apush', configuration: 'debug')
-    releaseCompile project(path: ':apush', configuration: 'release')
+    implementation project(':apush')
+    //启动模块
+    implementation project(':alaunch')
+    //登录注册模块
+    implementation project(':alogin')
     //Mine模块
-    debugCompile project(path: ':amine', configuration: 'debug')
-    releaseCompile project(path: ':amine', configuration: 'release')
-    //Mine模块
-    debugCompile project(path: ':alaunch', configuration: 'debug')
-    releaseCompile project(path: ':alaunch', configuration: 'release')
-    //Mine模块
-    debugCompile project(path: ':alogin', configuration: 'debug')
-    releaseCompile project(path: ':alogin', configuration: 'release')
-    //黄油刀系列
-    compile 'com.jakewharton:butterknife:8.4.0'
-    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    implementation project(':amine')
+
+
 }

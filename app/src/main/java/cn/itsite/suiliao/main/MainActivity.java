@@ -2,6 +2,8 @@ package cn.itsite.suiliao.main;
 
 import android.os.Bundle;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+
 import cn.itsite.abase.mvp.view.base.BaseActivity;
 import cn.itsite.suiliao.R;
 import cn.itsite.suiliao.main.view.MainFragment;
@@ -12,6 +14,8 @@ import cn.itsite.suiliao.main.view.MainFragment;
  * @E-mail langmanleguang@qq.com
  * @time 2017/12/23 0023 18:22
  */
+
+@Route(path = "/module/1")
 public class MainActivity extends BaseActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 

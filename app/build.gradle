@@ -13,6 +13,12 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
     }
     buildTypes {
         debug {
@@ -41,5 +47,6 @@ dependencies {
     //Mine模块
     implementation project(':amine')
 
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
 
 }

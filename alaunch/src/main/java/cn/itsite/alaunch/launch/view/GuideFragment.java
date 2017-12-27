@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bumptech.glide.Glide;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
@@ -98,6 +99,9 @@ public class GuideFragment extends BaseFragment {
 
             // TODO: 2017/12/27 0027 改成隐士启动，用ARouter
 //        startActivity(new Intent(_mActivity, MainActivity.class));
+            ARouter.getInstance().build("/module/1").navigation();
+
+
 
             _mActivity.overridePendingTransition(0, 0);
             //此处之所以延迟退出是因为立即退出在小米手机上会有一个退出跳转动画，而我不想要这个垂直退出的跳转动画。

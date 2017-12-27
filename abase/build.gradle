@@ -11,6 +11,12 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
     }
     buildTypes {
         release {
@@ -87,7 +93,10 @@ dependencies {
     api 'com.github.hackware1993:MagicIndicator:1.5.0'
     //orm框架
     api 'org.litepal.android:core:1.6.0'
-    //butterknife系列
+    //ButterKnife系列
     api 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //阿里巴巴开源基础路由
+    api 'com.alibaba:arouter-api:1.3.0'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
 }

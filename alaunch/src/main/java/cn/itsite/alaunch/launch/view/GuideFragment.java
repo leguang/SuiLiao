@@ -96,16 +96,10 @@ public class GuideFragment extends BaseFragment {
     private void initListener() {
         btGuide.setOnClickListener(view -> {
             SPCache.put(_mActivity, IS_FIRST_ENTRY, false);
-
-            // TODO: 2017/12/27 0027 改成隐士启动，用ARouter
-//        startActivity(new Intent(_mActivity, MainActivity.class));
-            ARouter.getInstance().build("/module/1").navigation();
-
-
-
+            ARouter.getInstance().build("/app/main").navigation();
             _mActivity.overridePendingTransition(0, 0);
             //此处之所以延迟退出是因为立即退出在小米手机上会有一个退出跳转动画，而我不想要这个垂直退出的跳转动画。
-//            getView().postDelayed(() -> _mActivity.finish(), 1000);
+            getView().postDelayed(() -> _mActivity.finish(), 1000);
         });
 
         vpGuide.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -115,11 +109,7 @@ public class GuideFragment extends BaseFragment {
 
             @Override
             public void onPageSelected(int position) {
-                if (position == images.length - 1) {
-                    btGuide.setVisibility(View.VISIBLE);
-                } else {
-                    btGuide.setVisibility(View.GONE);
-                }
+                btGuide.setVisibility(position == images.length - 1 ? View.VISIBLE : View.GONE);
             }
 
             @Override

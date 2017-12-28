@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+
 import cn.itsite.abase.cache.SPCache;
 import cn.itsite.abase.mvp.view.base.BaseFragment;
 import cn.itsite.alaunch.R;
@@ -53,16 +55,9 @@ public class SplashFragment extends BaseFragment<SplashContract.Presenter> imple
     }
 
     public void go2Main() {
-        // TODO: 2017/12/27 0027 改成隐士启动，用ARouter
-//        _mActivity.startActivity(new Intent(_mActivity, MainActivity.class));
-
+        ARouter.getInstance().build("/app/main").navigation();
         _mActivity.overridePendingTransition(0, 0);
         //此处之所以延迟退出是因为立即退出在小米手机上会有一个退出跳转动画，而我不想要这个垂直退出的跳转动画。
-        getView().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                _mActivity.finish();
-            }
-        }, 1000);
+        getView().postDelayed(() -> _mActivity.finish(), 1000);
     }
 }

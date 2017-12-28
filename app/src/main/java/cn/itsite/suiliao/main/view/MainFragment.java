@@ -12,7 +12,7 @@ import com.orhanobut.logger.Logger;
 import cn.itsite.abase.mvp.view.base.BaseFragment;
 import cn.itsite.amine.mine.view.MineFragment;
 import cn.itsite.suiliao.R;
-import cn.itsite.suiliao.main.chat.ChatListFragment;
+import cn.itsite.suiliao.main.chat.view.ChatListFragment;
 import cn.itsite.suiliao.main.play.view.PlayFragment;
 import me.yokeyword.fragmentation.SupportFragment;
 

@@ -1,4 +1,4 @@
-package cn.itsite.suiliao.main.chat;
+package cn.itsite.suiliao.main.chat.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,7 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseViewHolder;
 
@@ -33,8 +32,6 @@ import cn.itsite.suiliao.R;
  */
 public class ChatListFragment extends BaseFragment {
     private static final String TAG = ChatListFragment.class.getSimpleName();
-    @BindView(R.id.toolbar_title)
-    TextView toolbarTitle;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.recyclerView)
@@ -66,9 +63,10 @@ public class ChatListFragment extends BaseFragment {
 
     private void initToolbar() {
         initStateBar(toolbar);
-        toolbarTitle.setText("连接什么WIFI");
+//        title.setText("连接什么WIFI");
+        toolbar.setTitle("连接什么WIFI");
+        toolbar.setNavigationIcon(R.drawable.ic_left_black_24dp);
         toolbar.setNavigationOnClickListener(v -> _mActivity.onBackPressed());
-        toolbarTitle.setOnClickListener(v -> recyclerView.scrollToPosition(0));
     }
 
     private void initData() {

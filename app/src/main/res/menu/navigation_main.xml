@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/navigation_chat"
-        android:icon="@drawable/ic_message_black_78px"
+        android:icon="@drawable/ic_chat_black_24dp"
         android:orderInCategory="0"
         android:title="@string/title_chat" />
 
@@ -15,7 +15,7 @@
 
     <item
         android:id="@+id/navigation_mine"
-        android:icon="@drawable/ic_mine_black_78px"
+        android:icon="@drawable/ic_mine_black_24dp"
         android:orderInCategory="2"
         android:title="@string/title_mine" />
 

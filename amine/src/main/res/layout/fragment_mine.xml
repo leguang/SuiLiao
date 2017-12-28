@@ -4,6 +4,7 @@
     android:id="@+id/sv_mine_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:fadeScrollbars="true"
     android:scrollbars="none">
 
@@ -23,19 +24,21 @@
 
         <ImageView
             android:id="@+id/iv_avatar_mine_fragment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             app:layout_constraintBottom_toBottomOf="@+id/iv_header_mine_fragment"
             app:layout_constraintLeft_toLeftOf="@+id/iv_header_mine_fragment"
             app:layout_constraintRight_toRightOf="@+id/iv_header_mine_fragment"
             app:layout_constraintTop_toTopOf="@+id/iv_header_mine_fragment"
-            app:srcCompat="@drawable/ic_mine_black_78px" />
+            app:srcCompat="@drawable/ic_head_black_24dp" />
 
         <TextView
             android:id="@+id/tv_nickname_mine_frgament"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
             android:gravity="center"
+            android:maxLines="1"
             android:text="小明"
             app:layout_constraintBottom_toBottomOf="@+id/iv_header_mine_fragment"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -47,7 +50,7 @@
             android:id="@+id/textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:drawableTop="@drawable/ic_mine_black_78px"
+            android:drawableTop="@drawable/ic_head_black_24dp"
             android:gravity="center"
             android:text="TextView111"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -58,7 +61,7 @@
             android:id="@+id/textView2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:drawableTop="@drawable/ic_mine_black_78px"
+            android:drawableTop="@drawable/ic_head_black_24dp"
             android:gravity="center"
             android:text="TextView222"
             app:layout_constraintLeft_toRightOf="@+id/textView"
@@ -69,7 +72,7 @@
             android:id="@+id/textView3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:drawableTop="@drawable/ic_mine_black_78px"
+            android:drawableTop="@drawable/ic_head_black_24dp"
             android:gravity="center"
             android:text="TextView333"
             app:layout_constraintLeft_toRightOf="@+id/textView2"
@@ -80,7 +83,7 @@
             android:id="@+id/textView4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:drawableTop="@drawable/ic_mine_black_78px"
+            android:drawableTop="@drawable/ic_head_black_24dp"
             android:gravity="center"
             android:text="textView444"
             app:layout_constraintLeft_toRightOf="@+id/textView3"
@@ -98,12 +101,14 @@
 
         <ImageView
             android:id="@+id/iv_icon_settings_mine_fragment"
-            android:layout_width="30dp"
+            android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/tv_title_settings_mine_fragment"
             app:layout_constraintTop_toBottomOf="@+id/division0"
-            app:srcCompat="@drawable/ic_mine_black_78px" />
+            app:srcCompat="@drawable/ic_settings_24dp" />
 
         <TextView
             android:id="@+id/tv_title_settings_mine_fragment"
@@ -136,7 +141,7 @@
             app:layout_constraintLeft_toRightOf="@+id/tv_describe_settings_mine_fragment"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/division0"
-            app:srcCompat="@drawable/ic_mine_black_78px" />
+            app:srcCompat="@drawable/ic_right_black_24dp" />
 
         <View
             android:id="@+id/line0"
@@ -149,12 +154,14 @@
 
         <ImageView
             android:id="@+id/iv_icon_about_mine_fragment"
-            android:layout_width="30dp"
+            android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/tv_title_about_mine_fragment"
             app:layout_constraintTop_toBottomOf="@+id/line0"
-            app:srcCompat="@drawable/ic_mine_black_78px" />
+            app:srcCompat="@drawable/ic_about_24dp" />
 
         <TextView
             android:id="@+id/tv_title_about_mine_fragment"
@@ -187,15 +194,15 @@
             app:layout_constraintLeft_toRightOf="@+id/tv_describe_about_mine_fragment"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/line0"
-            app:srcCompat="@drawable/ic_mine_black_78px" />
+            app:srcCompat="@drawable/ic_right_black_24dp" />
 
-        <View
-            android:id="@+id/division1"
-            android:layout_width="0dp"
-            android:layout_height="800dp"
-            android:background="@color/base_gray"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_icon_about_mine_fragment" />
+        <!--<View-->
+            <!--android:id="@+id/division1"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="80dp"-->
+            <!--android:background="@color/base_gray"-->
+            <!--app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--app:layout_constraintRight_toRightOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/iv_icon_about_mine_fragment" />-->
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

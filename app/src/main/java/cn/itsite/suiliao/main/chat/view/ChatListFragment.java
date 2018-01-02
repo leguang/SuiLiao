@@ -63,9 +63,7 @@ public class ChatListFragment extends BaseFragment {
 
     private void initToolbar() {
         initStateBar(toolbar);
-//        title.setText("连接什么WIFI");
         toolbar.setTitle("连接什么WIFI");
-        toolbar.setNavigationIcon(R.drawable.ic_left_black_24dp);
         toolbar.setNavigationOnClickListener(v -> _mActivity.onBackPressed());
     }
 

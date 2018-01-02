@@ -8,6 +8,7 @@
     android:elevation="3dp"
     android:gravity="center_vertical"
     android:minHeight="?attr/actionBarSize"
+    app:navigationIcon="@drawable/ic_left_black_24dp"
     app:popupTheme="@style/AppTheme.PopupOverlay"
     app:titleTextAppearance="@style/ToolbarTitle">
 

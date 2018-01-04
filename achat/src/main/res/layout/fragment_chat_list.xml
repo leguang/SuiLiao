@@ -1,11 +1,46 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:orientation="vertical">
 
     <include layout="@layout/toolbar" />
 
-    <include layout="@layout/recyclerview" />
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:srlAccentColor="@android:color/white"
+        app:srlEnableLoadmore="true"
+        app:srlPrimaryColor="@color/colorPrimary">
 
+        <com.scwang.smartrefresh.header.FunGameHitBlockHeader
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <cn.itsite.statemanager.StateLayout
+            android:id="@+id/stateLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:emptyLayout="@layout/state_empty"
+            app:errorLayout="@layout/state_error"
+            app:loadingLayout="@layout/state_loading"
+            app:netErrorLayout="@layout/state_net_error">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never" />
+
+        </cn.itsite.statemanager.StateLayout>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlAccentColor="#888"
+            app:srlClassicsSpinnerStyle="Translate"
+            app:srlDrawableProgress="@drawable/ic_dashboard_black_24dp" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 </LinearLayout>

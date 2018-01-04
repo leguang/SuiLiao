@@ -28,7 +28,7 @@ import cn.itsite.statemanager.StateManager;
  */
 public class ChatListFragment extends BaseFragment {
     private static final String TAG = ChatListFragment.class.getSimpleName();
-    private StateManager mStateManager;
+    private StateManager stateManager;
     private BaseRecyclerViewAdapter<String, BaseViewHolder> adapter;
     private Params params = Params.getInstance();
     private Toolbar toolbar;
@@ -85,7 +85,7 @@ public class ChatListFragment extends BaseFragment {
     }
 
     private void initStateManager() {
-        mStateManager = StateManager.builder(_mActivity)
+        stateManager = StateManager.builder(_mActivity)
                 .setContent(recyclerView)
                 .setEmptyView(R.layout.state_empty)
 //                .setEmptyImage(R.drawable.ic_open_record_empty_state_gray_200px)

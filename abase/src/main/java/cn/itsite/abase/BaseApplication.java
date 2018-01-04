@@ -1,6 +1,7 @@
 package cn.itsite.abase;
 
 import android.content.Context;
+import android.os.StrictMode;
 import android.support.multidex.MultiDexApplication;
 
 import com.orhanobut.logger.AndroidLogAdapter;
@@ -28,6 +29,7 @@ public class BaseApplication extends MultiDexApplication {
         super.onCreate();
         mContext = this;
         initData();//根据是不是Debug版本来设置。
+        initStrictMode();
     }
 
     private void initData() {
@@ -68,6 +70,28 @@ public class BaseApplication extends MultiDexApplication {
 //        BlockCanary.install(this, new AppContext()).start();
         } else {
             Thread.setDefaultUncaughtExceptionHandler(AppExceptionHandler.getInstance(this));//在release版中处理全局异常。
+        }
+    }
+
+    private void initStrictMode() {
+// 分别为MainThread和VM设置Strict Mode
+        if (BuildConfig.DEBUG) {
+            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                    .detectDiskReads()
+                    .detectDiskWrites()
+                    .detectNetwork()
+//                    .detectResourceMismatches()
+                    .detectCustomSlowCalls()
+                    .penaltyLog()
+                    .build());
+
+            StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+                    .detectLeakedSqlLiteObjects()
+                    .detectLeakedClosableObjects()
+                    .detectLeakedRegistrationObjects()
+                    .detectActivityLeaks()
+                    .penaltyLog()
+                    .build());
         }
     }
 }

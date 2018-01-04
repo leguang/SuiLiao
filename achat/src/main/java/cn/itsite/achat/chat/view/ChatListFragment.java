@@ -1,4 +1,4 @@
-package cn.itsite.suiliao.main.chat.view;
+package cn.itsite.achat.chat.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,15 +14,11 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-import butterknife.Unbinder;
 import cn.itsite.abase.common.Params;
 import cn.itsite.abase.mvp.view.base.BaseFragment;
 import cn.itsite.abase.mvp.view.base.BaseRecyclerViewAdapter;
+import cn.itsite.achat.R;
 import cn.itsite.statemanager.StateManager;
-import cn.itsite.suiliao.R;
 
 /**
  * @author leguang
@@ -32,14 +28,11 @@ import cn.itsite.suiliao.R;
  */
 public class ChatListFragment extends BaseFragment {
     private static final String TAG = ChatListFragment.class.getSimpleName();
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
-    @BindView(R.id.recyclerView)
-    RecyclerView recyclerView;
-    Unbinder unbinder;
     private StateManager mStateManager;
     private BaseRecyclerViewAdapter<String, BaseViewHolder> adapter;
     private Params params = Params.getInstance();
+    private Toolbar toolbar;
+    private RecyclerView recyclerView;
 
     public static ChatListFragment newInstance() {
         ChatListFragment fragment = new ChatListFragment();
@@ -48,26 +41,27 @@ public class ChatListFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_list, container, false);
-        unbinder = ButterKnife.bind(this, view);
-        return view;
+        return inflater.inflate(R.layout.fragment_chat_list, container, false);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initToolbar();
+        initView(view);
         initData();
         initStateManager();
     }
 
-    private void initToolbar() {
-        initStateBar(toolbar);
-        toolbar.setTitle("连接什么WIFI");
-        toolbar.setNavigationOnClickListener(v -> _mActivity.onBackPressed());
+    private void initView(View view) {
+        toolbar = view.findViewById(R.id.toolbar);
+        recyclerView = view.findViewById(R.id.recyclerView);
     }
 
     private void initData() {
+        initStateBar(toolbar);
+        toolbar.setTitle("连接什么WIFI");
+        toolbar.setNavigationOnClickListener(v -> _mActivity.onBackPressed());
+
         recyclerView.setLayoutManager(new LinearLayoutManager(_mActivity));
 
         List<String> mData = new ArrayList<>();
@@ -99,15 +93,5 @@ public class ChatListFragment extends BaseFragment {
 //                .setErrorOnClickListener(v -> ptrFrameLayout.autoRefresh())
 //                .setEmptyOnClickListener(v -> ptrFrameLayout.autoRefresh())
                 .build();
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
-    }
-
-    @OnClick(R.id.toolbar)
-    public void onViewClicked() {
     }
 }

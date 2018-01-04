@@ -1,1 +1,1 @@
-include ':app', ':abase', ':apush', ':amine', ':alogin', ':alaunch'
+include ':app', ':abase', ':apush', ':amine', ':alogin', ':alaunch', ':achat'

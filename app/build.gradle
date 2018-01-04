@@ -46,6 +46,8 @@ dependencies {
     implementation project(':alogin')
     //Mine模块
     implementation project(':amine')
+    //Chat模块
+    implementation project(':achat')
     //阿里巴巴开源路由框架注解处理器
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     //ButterKnife系列
